@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# cspell:ignore shema directon
+# cspell:ignore shema directon skiped
 """Validate JSON examples in UCP specification documentation.
 
 UCP doc examples use a bespoke JSON capability set: strict JSON plus

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# cspell:ignore shema directon
+# cspell:ignore shema directon skiped
 """Contract conformance tests for validate_examples.py.
 
 Each test asserts one claim from the contract documented in
@@ -263,8 +263,11 @@ def test_annotation_parsing() -> None:
   # Unknown attribute key rejected via reserved _error
   # skip must be a whole word. Each typo below carries a valid reason=, so
   # only a whole-word check can reject them — a reason-only guard cannot.
-  for typo in ('skiped reason="oops"', 'skip_the_check reason="oops"',
-               'skipping validation reason="oops"'):
+  for typo in (
+    'skiped reason="oops"',
+    'skip_the_check reason="oops"',
+    'skipping validation reason="oops"',
+  ):
     ann = v.parse_annotation(typo)
     _check(
       f"annotation_skip_typo_with_reason_not_skipped[{typo}]",
